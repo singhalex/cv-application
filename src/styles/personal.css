@@ -1,4 +1,22 @@
+form {
+  max-width: 800px;
+  margin: auto;
+}
+
 fieldset {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
+}
+
+fieldset > div {
+  display: flex;
+  flex-direction: column;
+}
+fieldset * input {
+  padding: 0.5rem;
+}
+
+button {
+  margin-block: 0.5rem;
 }
