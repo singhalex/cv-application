@@ -28,20 +28,23 @@ class App extends Component {
         })
     }
     
-    handleSubmit = (e) => {
+  handleSubmit = (e) => {
+    const { name, email, title, phone, description } = this.state;
         e.preventDefault();
         this.setState({
             personal: {
-                name: this.state.name,
-                email: this.state.email,
-                title: this.state.title,
-                phone: this.state.phone,
-                description: this.state.description,
+                name: name,
+                email: email,
+                title: title,
+                phone: phone,
+                description: description,
             }
         });
     }
 
   render() { 
+    const { name, email, title, phone, description } = this.state.personal;
+
     return (
     <div className='container'>
         <Personal
@@ -51,11 +54,11 @@ class App extends Component {
         />
         <Education />
         <DisplayCV
-          name={this.state.personal.name}
-          email={this.state.personal.email}
-          title={this.state.personal.title}
-          phone={this.state.personal.phone}
-          description={this.state.personal.description}
+          name={name}
+          email={email}
+          title={title}
+          phone={phone}
+          description={description}
         />
     </div>
     );
