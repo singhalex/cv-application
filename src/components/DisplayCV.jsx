@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
 
 class DisplayCV extends Component {
-    render(props) { 
+    
+    render(props) {
+        const { name, email, title, phone, description, school, degree, from, to } = this.props;
         return (
             <div>
-                <p>{this.props.name}</p>
-                <p>{this.props.email}</p>
-                <p>{this.props.title}</p>
-                <p>{this.props.phone}</p>
-                <p>{this.props.description}</p>
+                <p>{name}</p>
+                <p>{email}</p>
+                <p>{title}</p>
+                <p>{phone}</p>
+                <p>{description}</p>
+                <p>{school}</p>
+                <p>{degree}</p>
+                <p>{from}</p>
+                <p>{to}</p>
             </div>
         );
     }

@@ -13,12 +13,22 @@ class App extends Component {
             title: '',
             phone: '',
             description: '',
+            school: '',
+            degree: '',
+            from: '',
+            to: '',
             personal: {
                 name: '',
                 title: '',
                 phone: '',
                 description: '',
             },
+            education: {
+              school: '',
+              degree: '',
+              from: '',
+              to: '',
+            }
         }
   }
   
@@ -29,7 +39,7 @@ class App extends Component {
     }
     
   handleSubmit = (e) => {
-    const { name, email, title, phone, description } = this.state;
+    const { name, email, title, phone, description, school, degree, from, to } = this.state;
         e.preventDefault();
         this.setState({
             personal: {
@@ -38,27 +48,40 @@ class App extends Component {
                 title: title,
                 phone: phone,
                 description: description,
-            }
+            },
+            education: {
+              school: school,
+              degree: degree,
+              from: from,
+              to: to,
+            },
         });
     }
 
   render() { 
     const { name, email, title, phone, description } = this.state.personal;
+    const { school, degree, from, to } = this.state.education;
 
     return (
     <div className='container'>
         <Personal
           onChange={this.handleChange}
           onClick={this.handleSubmit}
-          name={this.state.name}
+          // name={this.state.name}
         />
-        <Education />
+        <Education
+          onChange={this.handleChange}
+        />
         <DisplayCV
           name={name}
           email={email}
           title={title}
           phone={phone}
           description={description}
+          school={school}
+          degree={degree}
+          from={from}
+          to={to}
         />
     </div>
     );
