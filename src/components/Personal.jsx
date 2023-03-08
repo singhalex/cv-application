@@ -69,7 +69,7 @@ class Personal extends Component {
                         </div>
                         
                         <div>
-                            <label htmlFor="titleInput">Title</label>
+                            <label htmlFor="titleInput">Title:</label>
                             <input
                                 type="text"
                                 id='titleInput'
@@ -79,7 +79,7 @@ class Personal extends Component {
                         </div>
 
                         <div>
-                            <label htmlFor="phoneInput">Phone Number</label>
+                            <label htmlFor="phoneInput">Phone Number:</label>
                             <input
                                 type="tel"
                                 id='phoneInput'
@@ -89,7 +89,7 @@ class Personal extends Component {
                         </div>
                         
                         <div>
-                            <label htmlFor="descriptionInput">Description</label>
+                            <label htmlFor="descriptionInput">Description:</label>
                             <textarea
                                 name="description"
                                 id="descriptionInput"
