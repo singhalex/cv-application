@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import DisplayCV from './DisplayCV';
 import "../styles/personal.css"
 
 class Personal extends Component {
@@ -43,7 +44,7 @@ class Personal extends Component {
         const { name, email, title, phone, description } = this.state.personal;
         
         return (
-            <div>
+            <div className='container'>
                 <form>
                     <fieldset>
                         <legend>Personal Information</legend>
@@ -99,11 +100,13 @@ class Personal extends Component {
                     </fieldset>
                     <button onClick={this.handleSubmit}>Submit</button>
                 </form>
-                <p>{name}</p>
-                <p>{email}</p>
-                <p>{title}</p>
-                <p>{phone}</p>
-                <p>{description}</p>
+                <DisplayCV
+                    name={name}
+                    email={email}
+                    title={title}
+                    phone={phone}
+                    description={description}
+                />
             </div>
         );
     }
