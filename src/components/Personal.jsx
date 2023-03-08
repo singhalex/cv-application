@@ -1,48 +1,11 @@
 import React, { Component } from 'react';
-import DisplayCV from './DisplayCV';
+// import DisplayCV from './DisplayCV';
 import "../styles/personal.css"
 
 class Personal extends Component {
-    constructor() {
-        super();
-
-        this.state = {
-            name: '',
-            email: '',
-            title: '',
-            phone: '',
-            description: '',
-            personal: {
-                name: '',
-                title: '',
-                phone: '',
-                description: '',
-            },
-        }
-    }
-
-    handleChange = (e, property) => {
-        this.setState({
-            [property]: e.target.value,
-        })
-    }
-    
-    handleSubmit = (e) => {
-        e.preventDefault();
-        this.setState({
-            personal: {
-                name: this.state.name,
-                email: this.state.email,
-                title: this.state.title,
-                phone: this.state.phone,
-                description: this.state.description,
-            }
-        })
-    }
-
     render() { 
-        const { name, email, title, phone, description } = this.state.personal;
-        
+        const { onChange, onClick } = this.props;
+
         return (
             <div>
                 <form>
@@ -54,7 +17,7 @@ class Personal extends Component {
                                 type="text"
                                 id='nameInput'
                                 placeholder='Name'
-                                onChange={(e) => this.handleChange(e, 'name')}
+                                onChange={(e) => onChange(e, 'name')}
                             />
                         </div>
                         
@@ -64,7 +27,7 @@ class Personal extends Component {
                                 type="text"
                                 id='emailInput'
                                 placeholder='email'
-                                onChange={(e) => this.handleChange(e, 'email')}
+                                onChange={(e) => onChange(e, 'email')}
                             />
                         </div>
                         
@@ -74,7 +37,7 @@ class Personal extends Component {
                                 type="text"
                                 id='titleInput'
                                 placeholder='Title'
-                                onChange={(e) => this.handleChange(e, 'title')}
+                                onChange={(e) => onChange(e, 'title')}
                             />
                         </div>
 
@@ -84,7 +47,7 @@ class Personal extends Component {
                                 type="tel"
                                 id='phoneInput'
                                 placeholder='Phone Number'
-                                onChange={(e) => this.handleChange(e, 'phone')}
+                                onChange={(e) => onChange(e, 'phone')}
                             />
                         </div>
                         
@@ -94,19 +57,12 @@ class Personal extends Component {
                                 name="description"
                                 id="descriptionInput"
                                 cols="30" rows="10"
-                                onChange={(e) => this.handleChange(e, 'description')}
+                                onChange={(e) => onChange(e, 'description')}
                             ></textarea>
                         </div>
                     </fieldset>
-                    <button onClick={this.handleSubmit}>Submit</button>
+                    <button onClick={onClick}>Submit</button>
                 </form>
-                <DisplayCV
-                    name={name}
-                    email={email}
-                    title={title}
-                    phone={phone}
-                    description={description}
-                />
             </div>
         );
     }
