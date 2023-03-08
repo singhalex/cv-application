@@ -44,7 +44,7 @@ class Personal extends Component {
         const { name, email, title, phone, description } = this.state.personal;
         
         return (
-            <div className='container'>
+            <div>
                 <form>
                     <fieldset>
                         <legend>Personal Information</legend>
