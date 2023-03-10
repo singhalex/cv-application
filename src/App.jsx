@@ -43,8 +43,10 @@
           position: '',
           company: '',
           jobDescription: '',
-          
-        }
+        },
+        
+        showForm: true,
+        showCV: false,
       }
     }
     
@@ -55,29 +57,53 @@
       }
       
     handleSubmit = (e) => {
-      const { name, email, title, phone, description, school, degree, from, to, position, company, jobDescription } = this.state;
-          e.preventDefault();
-          this.setState({
-              personal: {
-                  name: name,
-                  email: email,
-                  title: title,
-                  phone: phone,
-                  description: description,
-              },
-              education: {
-                school: school,
-                degree: degree,
-                from: from,
-                to: to,
-              },
-            practical: {
-              position: position,
-              company: company,
-              jobDescription: jobDescription,
-              },
-          });
-      }
+      const {
+        name,
+        email,
+        title,
+        phone,
+        description,
+        school,
+        degree,
+        from,
+        to,
+        position,
+        company,
+        jobDescription
+      } = this.state;
+
+      e.preventDefault();
+      this.switchDisplay();
+
+      this.setState({
+        personal: {
+          name: name,
+          email: email,
+          title: title,
+          phone: phone,
+          description: description,
+         },
+         education: {
+          school: school,
+          degree: degree,
+          from: from,
+          to: to,
+         },
+         practical: {
+          position: position,
+          company: company,
+          jobDescription: jobDescription,
+         },
+      });
+    }
+
+    switchDisplay = () => {
+      this.setState({
+        showForm: !this.state.showForm,
+        showCV: !this.state.showCV,
+      })
+    }
+    
 
     render() { 
       const { name, email, title, phone, description } = this.state.personal;
@@ -86,26 +112,32 @@
 
       return (
       <div className='container'>
+          {this.state.showForm &&
           <form>
             <Personal onChange={this.handleChange} />
             <Practical onChange={this.handleChange} />
             <Education onChange={this.handleChange} />
             <button onClick={this.handleSubmit}>Submit</button>
-          </form>
-          <DisplayCV
-            name={name}
-            email={email}
-            title={title}
-            phone={phone}
-            description={description}
-            school={school}
-            degree={degree}
-            from={from}
-            to={to}
-            position={position}
-            company={company}
-            jobDescription={jobDescription}
-          />
+          </form>}
+          {this.state.showCV &&
+          <React.Fragment>
+            <DisplayCV
+              name={name}
+              email={email}
+              title={title}
+              phone={phone}
+              description={description}
+              school={school}
+              degree={degree}
+              from={from}
+              to={to}
+              position={position}
+              company={company}
+              jobDescription={jobDescription}
+            />
+            <button onClick={this.switchDisplay}>Edit</button>
+          </React.Fragment>
+          }
       </div>
       );
     }
