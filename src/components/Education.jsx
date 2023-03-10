@@ -46,8 +46,8 @@ class Education extends Component {
                         onChange={(e) => onChange(e, 'to')}
                     />
                 </div>
-            <button>Delete</button>
-            <button>Add</button>
+            {/* <button>Delete</button> */}
+            {/* <button>Add</button> */}
             </fieldset>
         );
     }
