@@ -3,7 +3,20 @@ import React, { Component } from 'react';
 class DisplayCV extends Component {
     
     render(props) {
-        const { name, email, title, phone, description, school, degree, from, to } = this.props;
+        const {
+            name,
+            email,
+            title,
+            phone,
+            description,
+            school,
+            degree,
+            from,
+            to,
+            position,
+            company,
+            jobDescription
+        } = this.props;
         return (
             <div>
                 <p>{name}</p>
@@ -15,6 +28,9 @@ class DisplayCV extends Component {
                 <p>{degree}</p>
                 <p>{from}</p>
                 <p>{to}</p>
+                <p>{position}</p>
+                <p>{company}</p>
+                <p>{jobDescription}</p>
             </div>
         );
     }

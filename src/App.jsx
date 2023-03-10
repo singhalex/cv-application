@@ -1,92 +1,114 @@
-import React, { Component } from 'react';
-import Personal from './components/Personal';
-import Education from './components/Education';
-import DisplayCV from './components/DisplayCV'
+  import React, { Component } from 'react';
+  import Personal from './components/Personal';
+  import Education from './components/Education';
+  import Practical from './components/Practical';
+  import DisplayCV from './components/DisplayCV'
 
-class App extends Component {
-  constructor() {
-        super();
+  class App extends Component {
+    constructor() {
+      super();
 
-        this.state = {
+      this.state = {
+        name: '',
+        email: '',
+        title: '',
+        phone: '',
+        description: '',
+
+        school: '',
+        degree: '',
+        from: '',
+        to: '',
+
+        position: '',
+        company: '',
+        jobDescription: '',
+
+        personal: {
             name: '',
-            email: '',
             title: '',
             phone: '',
             description: '',
-            school: '',
-            degree: '',
-            from: '',
-            to: '',
-            personal: {
-                name: '',
-                title: '',
-                phone: '',
-                description: '',
-            },
-            education: {
-              school: '',
-              degree: '',
-              from: '',
-              to: '',
-            }
+        },
+
+        education: {
+          school: '',
+          degree: '',
+          from: '',
+          to: '',
+        },
+
+        practical: {
+          position: '',
+          company: '',
+          jobDescription: '',
+          
         }
-  }
-  
-  handleChange = (e, property) => {
-        this.setState({
-            [property]: e.target.value,
-        })
+      }
     }
     
-  handleSubmit = (e) => {
-    const { name, email, title, phone, description, school, degree, from, to } = this.state;
-        e.preventDefault();
+    handleChange = (e, property) => {
         this.setState({
-            personal: {
-                name: name,
-                email: email,
-                title: title,
-                phone: phone,
-                description: description,
-            },
-            education: {
-              school: school,
-              degree: degree,
-              from: from,
-              to: to,
-            },
+          [property]: e.target.value,
         });
+      }
+      
+    handleSubmit = (e) => {
+      const { name, email, title, phone, description, school, degree, from, to, position, company, jobDescription } = this.state;
+          e.preventDefault();
+          this.setState({
+              personal: {
+                  name: name,
+                  email: email,
+                  title: title,
+                  phone: phone,
+                  description: description,
+              },
+              education: {
+                school: school,
+                degree: degree,
+                from: from,
+                to: to,
+              },
+            practical: {
+              position: position,
+              company: company,
+              jobDescription: jobDescription,
+              },
+          });
+      }
+
+    render() { 
+      const { name, email, title, phone, description } = this.state.personal;
+      const { school, degree, from, to } = this.state.education;
+      const { position, company, jobDescription } = this.state.practical;
+
+      return (
+      <div className='container'>
+          <Personal
+            onChange={this.handleChange}
+            onClick={this.handleSubmit}
+          />
+          <Education onChange={this.handleChange} />
+          <Practical onChange={this.handleChange} />
+          <DisplayCV
+            name={name}
+            email={email}
+            title={title}
+            phone={phone}
+            description={description}
+            school={school}
+            degree={degree}
+            from={from}
+            to={to}
+            position={position}
+            company={company}
+            jobDescription={jobDescription}
+          />
+      </div>
+      );
     }
-
-  render() { 
-    const { name, email, title, phone, description } = this.state.personal;
-    const { school, degree, from, to } = this.state.education;
-
-    return (
-    <div className='container'>
-        <Personal
-          onChange={this.handleChange}
-          onClick={this.handleSubmit}
-          // name={this.state.name}
-        />
-        <Education
-          onChange={this.handleChange}
-        />
-        <DisplayCV
-          name={name}
-          email={email}
-          title={title}
-          phone={phone}
-          description={description}
-          school={school}
-          degree={degree}
-          from={from}
-          to={to}
-        />
-    </div>
-    );
   }
-}
- 
-export default App;
+  
+  export default App;
 
