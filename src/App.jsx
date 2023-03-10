@@ -86,10 +86,7 @@
       return (
       <div className='container'>
           <form>
-            <Personal
-              onChange={this.handleChange}
-              onClick={this.handleSubmit}
-            />
+            <Personal onChange={this.handleChange} />
             <Education onChange={this.handleChange} />
             <Practical onChange={this.handleChange} />
             <button onClick={this.handleSubmit}>Submit</button>
