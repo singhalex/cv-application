@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&display=swap");
+
+#cv-container {
+  background-color: white;
+  font-family: "Golos Text", sans-serif;
+  margin-top: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 180px 940px;
+  grid-template-areas:
+    "header header"
+    "sidebar main";
+}
+
+.header {
+  grid-area: header;
+  background-color: #52528c;
+  padding: 1rem;
+  color: white;
+  line-height: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#name {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: #d8d8e8;
+  padding: 1rem;
+}
+
+.sidebar p {
+  margin-bottom: 0px;
+}
+
+.main {
+  grid-area: main;
+  padding: 1rem;
+}
+
+.main p {
+  margin-bottom: 0px;
+}
+
+.school-display {
+  display: flex;
+  gap: 3rem;
+}
+
+.years {
+  display: flex;
+  gap: 1rem;
+}
+
+.bold {
+  border-bottom: 1px solid lightgray;
+}
+
+.subscript {
+  font-size: 0.75rem;
+  margin-top: 0px;
+  color: rgb(82, 82, 82);
+}
