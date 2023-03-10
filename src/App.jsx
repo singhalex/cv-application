@@ -85,12 +85,15 @@
 
       return (
       <div className='container'>
-          <Personal
-            onChange={this.handleChange}
-            onClick={this.handleSubmit}
-          />
-          <Education onChange={this.handleChange} />
-          <Practical onChange={this.handleChange} />
+          <form>
+            <Personal
+              onChange={this.handleChange}
+              onClick={this.handleSubmit}
+            />
+            <Education onChange={this.handleChange} />
+            <Practical onChange={this.handleChange} />
+            <button onClick={this.handleSubmit}>Submit</button>
+          </form>
           <DisplayCV
             name={name}
             email={email}
