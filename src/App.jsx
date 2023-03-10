@@ -113,11 +113,11 @@
       return (
       <div className='container'>
           {this.state.showForm &&
-          <form>
+          <form onSubmit={this.handleSubmit}>
             <Personal onChange={this.handleChange} />
             <Practical onChange={this.handleChange} />
             <Education onChange={this.handleChange} />
-            <button onClick={this.handleSubmit}>Submit</button>
+            <button type='submit'>Submit</button>
           </form>}
           {this.state.showCV &&
           <React.Fragment>

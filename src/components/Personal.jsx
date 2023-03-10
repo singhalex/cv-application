@@ -14,16 +14,18 @@ class Personal extends Component {
                         id='nameInput'
                         placeholder='Name'
                         onChange={(e) => onChange(e, 'name')}
+                        required
                     />
                 </div>
                 
                 <div>
-                    <label htmlFor="emailInput">Email: </label>
+                    <label htmlFor="emailInput">Email:</label>
                     <input
                         type="text"
                         id='emailInput'
                         placeholder='email'
                         onChange={(e) => onChange(e, 'email')}
+                        required
                     />
                 </div>
                 
@@ -34,6 +36,7 @@ class Personal extends Component {
                         id='titleInput'
                         placeholder='Title'
                         onChange={(e) => onChange(e, 'title')}
+                        required
                     />
                 </div>
 
@@ -44,6 +47,7 @@ class Personal extends Component {
                         id='phoneInput'
                         placeholder='Phone Number'
                         onChange={(e) => onChange(e, 'phone')}
+                        required
                     />
                 </div>
                 
@@ -54,6 +58,7 @@ class Personal extends Component {
                         id="descriptionInput"
                         cols="30" rows="10"
                         onChange={(e) => onChange(e, 'description')}
+                        required
                     ></textarea>
                 </div>
             </fieldset>
