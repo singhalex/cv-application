@@ -2,7 +2,8 @@
   import Personal from './components/Personal';
   import Education from './components/Education';
   import Practical from './components/Practical';
-  import DisplayCV from './components/DisplayCV'
+  import DisplayCV from './components/DisplayCV';
+  import "./styles/app.css"
 
   class App extends Component {
     constructor() {
