@@ -6,7 +6,7 @@
   margin-top: 0.5rem;
   display: grid;
   grid-template-columns: 1fr 5fr;
-  grid-template-rows: 180px 940px;
+  grid-template-rows: 180px auto;
   grid-template-areas:
     "header header"
     "sidebar main";
@@ -41,6 +41,7 @@
 .main {
   grid-area: main;
   padding: 1rem;
+  min-height: 960px;
 }
 
 .main p {
