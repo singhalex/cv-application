@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Practical extends Component {
     render() { 
-        const { onChange } = this.props;
+        const { onChange, state } = this.props;
 
         return (
             <fieldset>
@@ -14,6 +14,7 @@ class Practical extends Component {
                         id='positionEntry'
                         placeholder='Position'
                         onChange={(e) => onChange(e, 'position')}
+                        value={state.position}
                     />
                 </div>
                 
@@ -24,6 +25,7 @@ class Practical extends Component {
                         id='companyEntry'
                         placeholder='Company'
                         onChange={(e) => onChange(e, 'company')}
+                        value={state.company}
                     />
                 </div>
 
@@ -34,6 +36,7 @@ class Practical extends Component {
                         id='jobDescription'
                         cols='30' rows='10'
                         onChange={(e) => onChange(e, 'jobDescription')}
+                        value={state.jobDescription}
                     />
                 </div>
             </fieldset>

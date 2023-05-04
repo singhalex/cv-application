@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Personal extends Component {
     render() { 
-        const { onChange } = this.props;
+        const { onChange, state } = this.props;
 
         return (
             <fieldset>
@@ -14,6 +14,7 @@ class Personal extends Component {
                         id='nameInput'
                         placeholder='Name'
                         onChange={(e) => onChange(e, 'name')}
+                        value={state.name}
                         required
                     />
                 </div>
@@ -25,6 +26,7 @@ class Personal extends Component {
                         id='emailInput'
                         placeholder='email'
                         onChange={(e) => onChange(e, 'email')}
+                        value={state.email}
                         required
                     />
                 </div>
@@ -36,6 +38,7 @@ class Personal extends Component {
                         id='titleInput'
                         placeholder='Title'
                         onChange={(e) => onChange(e, 'title')}
+                        value={state.title}
                         required
                     />
                 </div>
@@ -47,6 +50,7 @@ class Personal extends Component {
                         id='phoneInput'
                         placeholder='Phone Number'
                         onChange={(e) => onChange(e, 'phone')}
+                        value={state.phone}
                         required
                     />
                 </div>
@@ -58,6 +62,7 @@ class Personal extends Component {
                         id="descriptionInput"
                         cols="30" rows="10"
                         onChange={(e) => onChange(e, 'description')}
+                        value={state.description}
                         required
                     ></textarea>
                 </div>

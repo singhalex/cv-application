@@ -114,9 +114,9 @@
       <div className='container'>
           {this.state.showForm &&
           <form onSubmit={this.handleSubmit}>
-            <Personal onChange={this.handleChange} />
-            <Practical onChange={this.handleChange} />
-            <Education onChange={this.handleChange} />
+            <Personal onChange={this.handleChange} state={this.state} />
+            <Practical onChange={this.handleChange} state={this.state} />
+            <Education onChange={this.handleChange} state={this.state} />
             <button type='submit'>Submit</button>
           </form>}
           {this.state.showCV &&

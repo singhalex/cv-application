@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Education extends Component {
     state = {  } 
     render() { 
-        const {onChange} = this.props
+        const {onChange, state} = this.props
         return (
             <fieldset>
                 <legend>Education:</legend>
@@ -14,6 +14,7 @@ class Education extends Component {
                         id="schoolName"
                         placeholder='School Name'
                         onChange={(e) => onChange(e, 'school')}
+                        value={state.school}
                     />
                 </div>
 
@@ -24,6 +25,7 @@ class Education extends Component {
                         id='degree'
                         placeholder='Degree'
                         onChange={(e) => onChange(e, 'degree')}
+                        value={state.degree}
                     />
                 </div>
 
@@ -34,6 +36,7 @@ class Education extends Component {
                         id='from'
                         placeholder='From'
                         onChange={(e) => onChange(e, 'from')}
+                        value={state.from}
                     />
                 </div>
 
@@ -44,6 +47,7 @@ class Education extends Component {
                         inputMode='to'
                         placeholder='To'
                         onChange={(e) => onChange(e, 'to')}
+                        value={state.to}
                     />
                 </div>
             {/* <button>Delete</button> */}
